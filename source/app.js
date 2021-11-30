@@ -5,7 +5,7 @@ const app = express();
 
 const weatherData = require('../utils/weather'); 
 
-const port = process.env.PORT || 3000
+const port = process.env.PORT || 5000
 
 const publicStaticDirPath = path.join(__dirname, '../public')
 
@@ -18,7 +18,7 @@ app.set('views', viewsPath);
 hbs.registerPartials(partialsPath);
 app.use(express.static(publicStaticDirPath));
 
-app.get('', (req, res) => {
+app.get('/', (req, res) => {
     res.render('index', {
         title: 'Weather App'
     })
